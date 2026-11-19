@@ -1,0 +1,1 @@
+body .navbar.sub .navbar-nav .nav-item a:not(.btn), body .navbar.sub .navbar-nav .dropdown-menu .nav-item a:not(.btn){color:#606d75;}body .navbar.sub.navbar-sticky .nav-item a:not(.btn){color:#bec1ce;}body .navbar.sub .navbar-nav .nav-item a:not(.btn).active, body .navbar.sub .navbar-nav .nav-item a:not(.btn):hover{color:#00a6a6;}
