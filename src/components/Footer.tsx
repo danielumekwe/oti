@@ -1,75 +1,50 @@
 import Link from "next/link";
-import Image from "next/image";
-import { site, footerNav } from "@/lib/site";
+import { footerNav } from "@/lib/site";
+
+const columns = [
+  { title: "Company", links: footerNav.company },
+  { title: "Services", links: footerNav.services },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-tertiary text-light-text">
-      <div className="mx-auto max-w-[1200px] px-4 py-16">
-        <div className="grid gap-10 md:grid-cols-4">
-          <div>
-            <Image
-              src={site.logo}
-              alt={site.name}
-              width={160}
-              height={45}
-              className="mb-4 h-11 w-auto object-contain brightness-0 invert"
-            />
-            <p className="text-sm text-gray-300">{site.tagline}</p>
-          </div>
-
-          <div>
-            <h4 className="mb-4 text-lg font-bold text-white">Company</h4>
-            <ul className="space-y-2 text-sm">
-              {footerNav.company.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-gray-300 hover:text-secondary">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="mb-4 text-lg font-bold text-white">Services</h4>
-            <ul className="space-y-2 text-sm">
-              {footerNav.services.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-gray-300 hover:text-secondary">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="mb-4 text-lg font-bold text-white">Get in Touch</h4>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li>{site.address}</li>
-              <li>
-                <a href={site.phoneHref} className="hover:text-secondary">
-                  {site.phone}
-                </a>
-              </li>
-              <li>
-                <a href={`mailto:${site.email}`} className="hover:text-secondary">
-                  {site.email}
-                </a>
-              </li>
-              <li>{site.hours}</li>
-            </ul>
-          </div>
+    <footer className="bg-dark-bg">
+      <section className="py-[50px] md:py-[130px]">
+        <div className="mx-auto flex max-w-[1200px] flex-wrap items-start">
+          {columns.map((col) => (
+            <div key={col.title} className="my-[15px] w-full px-[15px] md:w-1/2 lg:w-1/4">
+              <div className="rounded-[10px] bg-[#ffffff06] p-[35px]">
+                <h4 className="mb-6 font-sans text-[1.5rem] font-bold leading-[1.2] text-white">
+                  {col.title}
+                </h4>
+                <ul className="flex flex-col gap-4">
+                  {col.links.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="text-base leading-6 text-light-text transition-colors hover:text-secondary"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
+      </section>
 
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-[1200px] flex-col items-center justify-between gap-2 px-4 py-6 text-sm text-gray-400 md:flex-row">
-          <p>© 2026 OTI Business Limited. All rights reserved.</p>
-          <p>Powered by OTI Business Limited</p>
+      <section className="bg-[#ffffff05] py-[10px]">
+        <div className="mx-auto flex max-w-[1200px] flex-col md:flex-row md:items-center md:justify-between">
+          <span className="mx-[15px] px-[15px] py-2 text-base leading-6 text-light-text">
+            © 2026.
+          </span>
+          <span className="mx-[15px] px-[15px] py-2 text-base leading-6 text-light-text">
+            Powered by OTI BUSINESS LIMITED
+          </span>
         </div>
-      </div>
+      </section>
     </footer>
   );
 }

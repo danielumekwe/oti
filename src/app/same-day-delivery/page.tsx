@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import ServiceCta from "@/components/ServiceCta";
+import { ServiceHeading, ServiceText } from "@/components/ServiceContent";
 
 export const metadata: Metadata = {
   title: "Same Day Delivery",
@@ -12,41 +12,57 @@ export const metadata: Metadata = {
 export default function SameDayDeliveryPage() {
   return (
     <>
-      <PageHero title="Same Day Delivery" />
+      <PageHero title="Same Day Delivery" video="/images/2021/03/highway.mp4" />
 
-      <section className="py-20">
-        <div className="mx-auto grid max-w-[1200px] items-center gap-12 px-4 md:grid-cols-2">
-          <div>
-            <h2 className="mb-5 text-3xl font-bold">
-              Why Choose OTI Business Limited for Same-Day Courier Services?
-            </h2>
-            <div className="space-y-4 text-foreground">
+      <section className="py-[50px]">
+        <div className="mx-auto flex max-w-[1140px] flex-col md:flex-row">
+          <div className="p-[10px] md:w-[50.438%] md:pr-0">
+            <ServiceHeading>
+              Why Choose OTI BUSINESS LIMITED for Same-Day Courier Services?
+            </ServiceHeading>
+            <ServiceText>
               <p>
-                Our same-day services are cost-effective and fully tailored, designed
-                around each client&apos;s requirements. We serve both occasional urgent
-                shipments and ongoing transport needs.
+                At OTI BUSINESS LIMITED, we provide cost-effective and fully tailored
+                same-day delivery solutions designed around your specific business
+                requirements. Whether you require an occasional urgent shipment or a
+                dependable logistics partner to manage ongoing transport needs, our
+                experienced team is ready to deliver a solution that works for you.
               </p>
               <p>
-                We promise responsive, reliable courier services that adapt to your
-                operational demands, with high standards of speed and professionalism.
+                We understand that flexibility is essential. That’s why we offer
+                responsive, reliable courier services that adapt to your operational
+                demands while maintaining the highest standards of speed and
+                professionalism.
               </p>
               <p>
-                Our fleet is available 24 hours a day, 7 days a week, to respond to
-                time-critical requests, covering the entire mainland United Kingdom.
+                Available on demand, 24 hours a day, 7 days a week, our same-day fleet is
+                prepared to respond immediately to time-critical requests — ensuring your
+                goods move without delay.
               </p>
               <p>
-                Delays are costly &mdash; that&apos;s why we emphasise rapid response,
-                direct transport, and dependable service. Contact us for a fast,
-                competitive quote.
+                We operate across the entire mainland United Kingdom, providing
+                nationwide coverage to support businesses wherever they are based.
               </p>
-            </div>
+              <p>
+                Contact OTI BUSINESS LIMITED today to receive a fast, competitive quote
+                and experience dependable same-day delivery you can trust.
+              </p>
+              <p>
+                In today’s fast-moving business environment, delays are costly. That is
+                why we focus on rapid response, direct transport, and dependable service —
+                giving our clients complete confidence that their goods will arrive
+                exactly when required.
+              </p>
+            </ServiceText>
           </div>
-          <div className="relative h-80 w-full overflow-hidden rounded-lg">
-            <Image
-              src="/images/2026/02/ce7d7476-8ce4-4af7-a19e-aa71ee90bd6d-1024x683.png"
-              alt="Same Day Delivery"
-              fill
-              className="object-cover"
+          <div className="flex justify-center p-[10px] md:w-1/2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/2026/02/86bd61c8-9f02-475d-bf3a-6db4ede2ee26-Photoroom-682x1024.png"
+              alt="OTI Business Limited same-day booking confirmation"
+              width={682}
+              height={1024}
+              className="h-auto w-full max-w-[682px] self-start"
             />
           </div>
         </div>
@@ -54,7 +70,7 @@ export default function SameDayDeliveryPage() {
 
       <ServiceCta
         title="Need Same-Day Delivery?"
-        body="We offer same-day courier services anywhere in the UK, with collection within 30-60 minutes of booking confirmation."
+        body="Trust OTI BUSINESS LIMITED for fast, secure, and reliable same-day courier services anywhere in the UK. Our team is ready to collect within 30–60 minutes of booking confirmation."
       />
     </>
   );

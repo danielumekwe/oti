@@ -1,72 +1,86 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import ServiceCta from "@/components/ServiceCta";
+import { ServiceHeading, ServiceText } from "@/components/ServiceContent";
 
 export const metadata: Metadata = {
   title: "Dedicated Onboard Courier Services",
   description:
-    "A high-speed, controlled onboard courier service for urgent, confidential or high-priority shipments, available 24/7 across the UK.",
+    "A professional courier personally accompanies your shipment from collection to final delivery — maximum speed, security and control, available 24/7 across the UK.",
 };
 
-const useCases = [
-  "Time-sensitive contracts and legal documents",
-  "High-value or confidential materials",
-  "Critical business components",
-  "Urgent international or domestic transfers",
-];
-
-export default function DedicatedOnboardCourierServicesPage() {
+export default function DedicatedOnboardCourierPage() {
   return (
     <>
-      <PageHero title="Dedicated Onboard Courier Services" />
+      <PageHero title="Dedicated Onboard Courier Services" video="/images/2021/03/highway.mp4" />
 
-      <section className="py-20">
-        <div className="mx-auto grid max-w-[1200px] items-center gap-12 px-4 md:grid-cols-2">
-          <div className="relative h-80 w-full overflow-hidden rounded-lg md:order-2">
-            <Image
-              src="/images/2026/02/b15bc0f4-b4a6-412f-8e3f-04eb32784964-1024x683.png"
-              alt="Dedicated Onboard Courier Services"
-              fill
-              className="object-cover"
-            />
+      <section className="pb-[30px] pt-[10px]">
+        <div className="mx-auto flex max-w-[1140px] flex-col md:flex-row">
+          <div className="p-[10px] md:w-1/2">
+            <ServiceHeading>Dedicated Onboard Courier Services</ServiceHeading>
+            <ServiceText>
+              <p>
+                When timing is critical and security cannot be compromised, our Dedicated
+                Onboard Courier Service provides the highest level of control and urgency.
+                A professional courier personally accompanies your shipment from
+                collection to final delivery, ensuring continuous supervision and the
+                fastest possible transit time.
+              </p>
+              <p>
+                Unlike standard transport methods, your consignment does not pass through
+                depots or multiple handling points. It travels directly with a dedicated
+                courier, reducing risk and eliminating unnecessary delays.
+              </p>
+              <p>This service is ideal for:</p>
+              <ul>
+                <li><p>Time-sensitive contracts and legal documents</p></li>
+                <li><p>High-value or confidential materials</p></li>
+                <li><p>Critical business components</p></li>
+                <li><p>Urgent international or domestic transfers</p></li>
+              </ul>
+              <p>
+                At OTI BUSINESS LIMITED, we understand that some deliveries simply cannot
+                wait. Our onboard couriers operate with precision, discretion, and complete
+                professionalism — giving you total peace of mind from departure to arrival.
+              </p>
+              <p>
+                Available 24/7 across the UK, we are ready to respond immediately when your
+                delivery demands priority handling.
+              </p>
+              <p>
+                We understand that flexibility is essential. That’s why we offer
+                responsive, reliable courier services that adapt to your operational
+                demands while maintaining the highest standards of speed and
+                professionalism.
+              </p>
+              <p>
+                Available on demand, 24 hours a day, 7 days a week, our same-day fleet is
+                prepared to respond immediately to time-critical requests — ensuring your
+                goods move without delay.
+              </p>
+              <p>
+                We operate across the entire mainland United Kingdom, providing
+                nationwide coverage to support businesses wherever they are based.
+              </p>
+              <p>
+                Contact OTI BUSINESS LIMITED today to receive a fast, competitive quote
+                and experience dependable same-day delivery you can trust.
+              </p>
+              <p>
+                In today’s fast-moving business environment, delays are costly. That is
+                why we focus on rapid response, direct transport, and dependable service —
+                giving our clients complete confidence that their goods will arrive
+                exactly when required.
+              </p>
+            </ServiceText>
           </div>
-          <div>
-            <p className="mb-4 font-semibold text-secondary">
-              When timing is critical and security cannot be compromised
-            </p>
-            <p className="mb-6 text-foreground">
-              Our dedicated onboard courier service offers maximum control and urgency,
-              with a courier who stays with the shipment from collection to delivery.
-              Shipments travel directly with the courier, skipping depots and handling
-              points, which reduces risk and eliminates unnecessary delays.
-            </p>
-            <h3 className="mb-3 text-xl font-bold">Ideal for:</h3>
-            <ul className="space-y-2 text-foreground">
-              {useCases.map((item) => (
-                <li key={item} className="flex items-start gap-2">
-                  <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-secondary" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-light-bg py-16">
-        <div className="mx-auto max-w-[800px] px-4 text-center">
-          <p className="text-foreground">
-            Our couriers work with precision, discretion, and complete professionalism.
-            Available 24/7 across the UK, we operate across the entire mainland United
-            Kingdom &mdash; on demand, any hour, any day.
-          </p>
+          <div className="min-h-[420px] bg-[url('/images/2026/02/6ba2c83e-42f6-4419-ad00-97521e5834ff.png')] bg-cover bg-center bg-no-repeat md:w-1/2" />
         </div>
       </section>
 
       <ServiceCta
         title="Need Maximum Speed and Security?"
-        body="A courier accompanies your shipment with zero delays and complete supervision, from collection to delivery."
+        body="Our dedicated onboard courier will personally accompany your shipment from collection to final delivery — with zero delays and complete supervision."
       />
     </>
   );
